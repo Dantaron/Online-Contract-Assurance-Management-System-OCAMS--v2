@@ -1,0 +1,69 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title DantaCodes
+    style.
+      body {
+        display: flex;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        background-color: #f4f4f4; /* Adjust background color as needed */
+      }
+      form {
+        width: 300px;
+        background-color: #fff;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      p {
+        color: red;
+        margin: 5px 0;
+        display: none;
+      }
+      input[type="submit"] {
+        background-color: rgb(9, 155, 155);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      a {
+        display: block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: blue;
+        font-style: italic;
+        background-color: white;
+        border-radius: 10px;
+        border: 2px solid rebeccapurple;
+        padding: 5px;
+      }
+
+  body
+    form(name='form1' method='post' action='login' onsubmit='return ender()')
+      input(type='text' name='email' placeholder='Email' onkeyup='return validator()')
+      p#emailErr
+      input(type='text' name='pas1' placeholder='Password' minlength='2' maxlength='16' onkeyup='return validator()')
+      p#pas1Err
+      input(type='submit' value='Login')
+      a(href='register') Back to register
+      a(href='/') Back to default Page
+    script(src='inlinecontent.js')
+    script(src='form1return.js')

@@ -1,0 +1,68 @@
+// views/user.pug
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    style.
+      /* Your styling for the user page */
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #0a8383; /* Navigation bar color */
+        color: #fff; /* Text color */
+        padding: 10px;
+        text-align: center;
+      }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        background-color: #333; /* Navigation links background color */
+        padding: 10px;
+      }
+      nav a {
+        color: #fff; /* Link text color */
+        text-decoration: none;
+        padding: 10px 20px; /* Adjust padding as needed */
+        border-radius: 4px; /* Add border radius for a rounded appearance */
+        transition: background-color 0.3s ease; /* Smooth transition on hover */
+        background-color: #006efe; /* Button background color */
+        display: inline-block;
+      }
+      nav a:hover {
+        background-color: #0050a2; /* Hover background color */
+      }
+      main {
+        padding: 20px;
+      }
+      footer {
+        background-color: #0a8383; /* Match with the color in index.pug */
+        color: #fff; /* Text color */
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      a.logout {
+        background-color: #ff0000; /* Red background for Logout */
+      }
+    title User Page
+  body
+    header
+      block content1
+    nav
+      a(href='userhome') Home
+      a(href='#') House
+      a(href='#') Contracts
+      a(href='#') Credintials
+      a(href='/' class='logout') Logout
+    main
+      block content
+    footer
+      | &copy; 2024 All rights reserved.

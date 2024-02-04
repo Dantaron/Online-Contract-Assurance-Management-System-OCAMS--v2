@@ -1,0 +1,40 @@
+extends adminlayout
+
+block content
+  #userTable
+    table
+      thead
+        tr
+          th S/N
+          th First Name
+          th Last Name
+          th Email
+          th Password
+          th Role
+          th Mobile 
+          th Signature
+          th Contract
+          th Delete
+      tbody
+        if users && users.length > 0
+          each user, index in users
+            tr(data-user-id=user.id)
+              td= index + 1
+              td= user.first_name
+              td= user.last_name
+              td= user.user_email
+              td= user.user_password 
+              td= user.user_role
+              td= user.user_phone_number 
+              td= user.user_signature
+              td
+                // Contract column with "Show" anchor
+                a.show(href='#') Show  
+              td
+                // Delete column with "Delete" button inside a form
+                form(method='post' action='/delete-user')
+                  input(type='hidden' name='deleteUserId' value=user.user_id)
+                  button(type='submit') Delete
+        else
+          tr
+            td(colspan="10") No users found

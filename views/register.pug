@@ -1,0 +1,109 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title DantaCodes
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+      #namErr,
+      #emailErr,
+      #pas1Err,
+      #pas2Err,
+      #mobErr {
+        display: none;
+        color: red;
+        background-color: black;
+      }
+      form {
+        width: 300px;
+        max-width: 100%;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        color: white;
+        background-color: rgb(9, 155, 155);
+        border-radius: 10px;
+        width: 150px;
+        font-size: xx-large;
+      }
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+      }
+      a {
+        color: blue;
+        font-style: italic;
+        background-color: white;
+        border-radius: 10px;
+        border-width: 5px;
+        border-color: rebeccapurple;
+        border-style: solid;
+        padding: 3px;
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+  body
+    form(name='form1' method='post' action='/register' onsubmit='return ender()')
+      div
+        // Removed image tag
+      br
+      div
+        input#firstName(type='text' name='firstName' placeholder='First Name' required='')
+        br
+      div
+        input#lastName(type='text' name='lastName' placeholder='Last Name' required='')
+        br
+      div
+        input#email(type='email' name='email' placeholder='Email' required='')
+        br
+      div
+        input#password(type='password' name='password' placeholder='Password' required='')
+        br
+      div
+        input#retypePassword(type='password' name='retypePassword' placeholder='Retype password' required='')
+        br
+      div
+        select#gender(name='gender' required='')
+          option(value='male') Male
+          option(value='female') Female
+        br
+      div
+        input(type='text' name='mobile' placeholder='Mobile' minlength='10' maxlength='10' onkeyup='return validator()')
+        br
+        p#mobErr
+        br
+      div
+        input(type='submit' value='Register')
+      br
+      div
+        a(href='login') I already have an account
+      br
+      div
+        a(href='/') Back to default Page
+    script(src='inlinecontent.js')
+    script(src='form1return.js')
